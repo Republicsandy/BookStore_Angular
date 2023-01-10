@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/UserService/user.service';
 
 @Component({
@@ -12,13 +13,11 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted=false;
   users='1'
-  userId=true;
-  admin=true;
-  constructor(private formBuilder: FormBuilder,private user: UserService) { }
+  constructor(private formBuilder: FormBuilder,private user: UserService ,private route:Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email, Validators.pattern("^[A-Z a-z 0-9 +_.-]+@[A-z a-z 0-9 .-]+$")]],
+      email: ['', [Validators.required, Validators.email, ]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
@@ -36,15 +35,12 @@ export class LoginComponent implements OnInit {
       this.user.login(payload).subscribe((response: any) => {
         console.log(response);
         localStorage.setItem('token',response.result.accessToken)
+         this.route.navigateByUrl("/home/books")
       }
       )
     }
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
   }
 
-  userBar() {
-    this.userId = false
-    this.admin = false
-  }
+  
 }

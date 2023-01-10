@@ -1,0 +1,157 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .fixpos {
+    // position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #A03037;
+  }
+  
+  .header {
+    background-color: #A03037;
+    // position: fixed;
+    // margin-top: -112px;
+  }
+  
+  .logo {
+    display: flex;
+    flex-direction: row;
+    margin-left: 230px;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .logo img {
+    width: 44px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+  
+  }
+  
+  .search-container {
+    display: flex;
+    flex-direction: row;
+    margin: 35px;
+    border-radius: 1px;
+    height: 56%;
+    padding-right: 20px;
+    background-color: white;
+  
+  }
+  
+  .search-field {
+    margin-bottom: 7px;
+    width: 500px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    box-sizing: border-box;
+    outline: none;
+    font-variant-ligatures: none;
+    background: transparent;
+    border: none;
+    font: normal 16px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .s-btn img {
+    height: 28px;
+    margin-bottom: -12px;
+  }
+  
+  // .footer {
+  //   width: 100%;
+  //   background-color: #2E1D1E;
+  //   height: 50px;
+  //   margin-top: 40rem;
+  //   position: relative;
+  // }
+  
+  // .footer p {
+  //   margin-left: 125px;
+  //   color: white;
+  // }
+  
+  .profile {
+    display: flex;
+    flex-direction: column;
+    // margin: 60px;
+    background: transparent;
+    border: none;
+    color: white;
+    padding-right: 50px;
+  }
+  
+  .profile label {
+    color: #efe9e9;
+    margin-left: 1px;
+    font-size: 10px;
+  }
+  
+  .cart {
+    display: flex;
+    flex-direction: column;
+    margin: 1px;
+    background: transparent;
+    border: none;
+    margin-right: 230px;
+  }
+  
+  .cart label {
+    margin-left: 4px;
+    font-size: 10px;
+    color: #efe9e9;
+  }
+  
+  // .menu-field{
+  //   margin: 1px;
+  // }
+  // .bg{
+  //   margin: 1px;
+  // }
+  .menu-field {
+    margin: 1px;
+  
+  }
+  
+  .h4 {
+    margin-bottom: 5px;
+  }
+  
+  .login-btn {
+    background-color: transparent;
+    border-color: #A03037;
+    color: #A03037;
+  }
+  
+  .bg {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-bottom: 45px;
+  }
+  
+  .bg h4 {
+    margin: 1px;
+  }
+  
+  .order {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .order img {
+    height: 15px;
+    margin-right: 8px;
+    margin-left: 4px;
+  }
+  
+  .order p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    margin-top: -2px;
+  }
+  

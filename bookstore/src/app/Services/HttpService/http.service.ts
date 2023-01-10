@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class HttpService {
-  baseUrl = 'https://bookstore.incubation.bridgelabz.com/api';
+  baseUrl = 'https://bookstore.incubation.bridgelabz.com';
+  // https://bookstore.incubation.bridgelabz.com/bookstore_user/login
   constructor(private httpclient: HttpClient) {}
 
   postService(
