@@ -1,0 +1,49 @@
+<div class="main-container">
+    <div class="left-container">
+        <img class="logo" src="../../../assets/login.png" alt="">
+        <p>Online Book Shopping</p>
+    </div>
+    <div class="right-container">
+        <div class="login-head">
+            <div>
+                <button routerLink="/login" style="border-bottom: groove; border-color:red;">LOGIN</button>
+            </div>
+            <div>
+                <button style="color: #878787;" routerLink="/signup">SIGNUP</button>
+            </div>
+        </div>
+        <!-- <div class="user" *ngIf="userId">
+                <button (click)="userBar()">User Login</button>
+            </div> -->
+        <form (ngSubmit)="onSubmit()">
+            <div class="input-field">
+                <div class="label">
+                    <label for="email">Email Id</label>
+                </div>
+                <div>
+                    <mat-form-field class="input" appearance="outline">
+                        <input matInput placeholder="Email or phone" type="text" formControlName="email">
+                    </mat-form-field>
+                </div>
+
+                <div class="label">
+                    <label for="password">Password</label>
+                </div>
+
+                <div>
+                    <mat-form-field class="input" appearance="outline">
+                        <input matInput placeholder="Password" type="password" formControlName="password">
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div class="forget-pass">
+                <h3><a>Forget password</a></h3>
+            </div>
+            <div>
+                <a class="button" routerLink="/home/books" (click)="onSubmit()">User Login</a>
+            </div>
+        </form>
+
+    </div>
+</div>
