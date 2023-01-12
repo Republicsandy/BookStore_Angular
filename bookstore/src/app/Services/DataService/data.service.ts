@@ -13,4 +13,6 @@ export class DataService {
   SendBookDetails(book:any){
     this.BookDetails.next(book)
   }
+
+ 
 }

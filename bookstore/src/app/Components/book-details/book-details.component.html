@@ -1,0 +1,68 @@
+<div class="Container">
+    <div class="main">
+        <div class="header">
+            <p routerLink="/home/books" type="button">Home /</p>
+            <p>Book</p>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="img-field">
+            <div class="image">
+                <img src="../../../assets/image 36.png" alt="">
+            </div>
+            <div class="buttons">
+                <!-- <div class="bag"> -->
+                <button class="btn">add to
+                    bag</button>
+                <!-- </div> -->
+                <div class="wishlst">
+                    <button class="btn"routerLink="/home/wish" (click)="wish()">wishlist</button>
+                </div>
+            </div>
+        </div>
+        <div class="book-description">
+            <div class="bookname">
+                <h2>{{Book.bookName}}</h2>
+                <p>by {{Book.author}}</p>
+            </div>
+            <div class="rating-container">
+                <div class="rating">
+                    4 <mat-icon class="star">star</mat-icon>
+                </div>
+                <div class="no-of-people-rated">
+                    (3)
+                </div>
+            </div>
+            <div class="price-container">
+                <div class="dicounted-price">
+                    Rs. {{Book.discountPrice}}
+                </div>
+                <div class="actual-price">
+                    Rs. {{Book.price}}
+                </div>
+            </div>
+            <hr>
+            <div class="disc">
+                <ul>
+                    <li>
+                        Book Description
+                    </li>
+                </ul>
+                {{Book.description}}
+            </div>
+            <hr>
+            <div class="feedback">
+                <h2>Customer Feedback</h2>
+            </div>
+            <div class="feed">
+                <p>Overall Rating</p>
+                <textarea matInput class="searchInput" type="text" placeholder="write a review"
+                     name="comment" #box></textarea>
+                <div class="sub">
+                    <button class="btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

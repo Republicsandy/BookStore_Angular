@@ -1,52 +1,48 @@
 <div>
-    <div class="main">
-      <div class="books">
-        <p>Books</p>
-      </div>
-      <div type="dropdown">
-        <div class="sort">
-          <mat-form-field appearance="outline">
-            <mat-label>Sort by relevance</mat-label>
-            <mat-select class="matselect">
-              <mat-option value="one">Price:Low to High</mat-option>
-              <mat-option  value="two">Price:High to Low</mat-option>
-              <mat-option value="third">Newest Arrivals</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
+  <div class="main">
+    <div class="books">
+      <p>Books</p>
     </div>
-    <div class="all-books-container">
-      <div class="all-books"
-        *ngFor="let Book of recieveBookList ">
-        <div class="book">
-          <div class="book-image">
-            <img src="../../../assets/image 36.png" alt="">
-          </div>
-          <div class="book-description">
-            <h2>{{Book.bookName}}</h2>
-            <p>by {{Book.author}}</p>
-            <div class="rating-container">
-              <div class="rating" fxLayout="row" fxLayoutAlign="center center">
-                4 <mat-icon class="star" fxFlexAlign="center">star</mat-icon>
-              </div>
-              <div class="no-of-people-rated">
-                (3)
-              </div>
-            </div>
-            <div class="price-container" fxLayout="row">
-              <div class="dicounted-price">
-                <b>Rs. {{Book.discountPrice}}</b>
-              </div>
-              <div class="actual-price">
-                Rs. {{Book.price}}
-              </div>
-            </div>
-          </div>
-        </div>
+    <div type="dropdown">
+      <div class="sort">
+        <mat-form-field appearance="outline">
+          <mat-label>Sort by relevance</mat-label>
+          <mat-select class="matselect">
+          </mat-select>
+        </mat-form-field>
       </div>
-      
     </div>
   </div>
-
-  <!-- {{parretdata}} -->
+  <div class="all-books-container">
+    <div class="all-books"
+      *ngFor="let Book of recieveBookList ">
+      <div class="book" (click)="onclick(Book)">
+        <div class="book-image">
+          <img src="../../../assets/image 36.png" alt="">
+        </div>
+        <div class="book-description">
+          <h2>{{Book.bookName}}</h2>
+          <p>by {{Book.author}}</p>
+          <div class="rating-container">
+            <div class="rating" fxLayout="row" fxLayoutAlign="center center">
+              4 <mat-icon class="star" fxFlexAlign="center">star</mat-icon>
+            </div>
+            <div class="no-of-people-rated">
+              (3)
+            </div>
+          </div>
+          <div class="price-container" fxLayout="row">
+            <div class="dicounted-price">
+              <b>Rs. {{Book.discountPrice}}</b>
+            </div>
+            <div class="actual-price">
+              Rs. {{Book.price}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+  <app-footer></app-footer>
+</div>

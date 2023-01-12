@@ -22,4 +22,25 @@ export class BookService {
     }
     return this.httpService.getService("/bookstore_user/get/book",true, header)
   }
+
+  addCart(Book:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService("/bookstore_user/add_cart_item/"+Book.product_id, Book, true, header)
+  }
+  addWish(Book:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService("/bookstore_user/add_wish_list/"+Book.product_id, Book, true, header)
+  }
 }

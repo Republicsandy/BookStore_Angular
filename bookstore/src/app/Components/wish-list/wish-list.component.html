@@ -1,0 +1,31 @@
+<div class="Container">
+    <div class="main">
+        <div class="header">
+            <p routerLink="/home/books" type="button">Home /</p>
+            <p>My Wishlist</p>
+        </div>
+    </div>
+    <div class="cart_container">
+        <h3>My Wishlist({{20}})</h3>
+        <div class="crt" >
+            <div class="image">
+                <img src="../../../assets/Image 11.png" alt="">
+            </div>
+            <div class="book-description">
+                <h2>{{'bookName'}}</h2>
+                <p>by {{'author'}}</p>
+                <div class="price-container" fxLayout="row">
+                    <div class="dicounted-price">
+                        <b>{{'discountPrice'}}</b>
+                    </div>
+                    <div class="actual-price">
+                        Rs. {{'price'}}
+                    </div>
+                </div>
+            </div>
+            <div class="delete" >
+                <img src="../../../assets/delete.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

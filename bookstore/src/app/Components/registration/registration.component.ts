@@ -16,10 +16,10 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      fullName: ['', [Validators.required, Validators.pattern("^[A-Z]{1}[A-Z a-z]{3,}$")]],
-      email: ['', [Validators.required, Validators.email, Validators.pattern("^[A-Z a-z 0-9 +_.-]+@[A-z a-z 0-9 .-]+$")]],
-      password: ['', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+=-]).{8,}$")]],
-      phone: ['', [Validators.required, Validators.pattern("^[0-9]{10}$")]],
+      fullName: ['', [Validators.required,]],
+      email: ['', [Validators.required, Validators.email, ]],
+      password: ['', [Validators.required, ]],
+      phone: ['', [Validators.required, ]],
     });
   }
   get f() { return this.registerForm.controls; }

@@ -19,6 +19,9 @@ import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.c
 import { DisplayBooksComponent } from './Components/display-books/display-books.component';
 import { HomeComponent } from './Components/home/home.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { BookDetailsComponent } from './Components/book-details/book-details.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { WishListComponent } from './Components/wish-list/wish-list.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { HeaderComponent } from './Components/header/header.component';
     DisplayBooksComponent,
     HomeComponent,
     HeaderComponent,
+    BookDetailsComponent,
+    FooterComponent,
+    WishListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,7 @@ import { HeaderComponent } from './Components/header/header.component';
     FormsModule,ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,MatTabsModule,
-    MatMenuModule,
+    MatMenuModule
    
   ],
   providers: [],
