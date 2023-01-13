@@ -15,26 +15,26 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
 import { DisplayBooksComponent } from './Components/display-books/display-books.component';
 import { HomeComponent } from './Components/home/home.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { BookDetailsComponent } from './Components/book-details/book-details.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { WishListComponent } from './Components/wish-list/wish-list.component';
+import { CartComponent } from './Components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    GetAllBooksComponent,
     DisplayBooksComponent,
     HomeComponent,
     HeaderComponent,
     BookDetailsComponent,
     FooterComponent,
-    WishListComponent
+    WishListComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

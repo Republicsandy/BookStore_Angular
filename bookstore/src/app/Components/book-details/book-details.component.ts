@@ -8,11 +8,31 @@ import { DataService } from 'src/app/Services/DataService/data.service';
   styleUrls: ['./book-details.component.scss']
 })
 export class BookDetailsComponent {
-  @Input() recieveBookList: any;
+  @Output() RefreshEvent = new EventEmitter<string>();
+  BookList = []
   Book: any
+  description: any;
+  discountPrice: any;
+  bookName: any;
+  author: any;
+  quantity: any
+  price: any;
+  _id: any;
+  array: any;
+  Feedback = [];
+  BookId: any;
   constructor(private book: BookService, private dataService: DataService) {
   }
-
+  cart() {
+    let Book = {
+      product_id: this.Book._id,
+    }
+    console.log(Book)
+    this.book.addCart(Book).subscribe((res: any) => {
+      console.log(res)
+      this.RefreshEvent.emit(res)
+    })
+  }
   
   wish() {
     let Book = {
@@ -23,4 +43,7 @@ export class BookDetailsComponent {
       console.log(res)
     })
   }
+
+  
+
 }

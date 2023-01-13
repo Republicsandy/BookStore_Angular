@@ -1,0 +1,140 @@
+<div class="Container">
+    <div class="main">
+        <div class="header">
+            <p routerLink="/home/books" type="button">Home /</p>
+            <p>My cart</p>
+        </div>
+    </div>
+    <div class="cart_container">
+        <h2>My Cart({{BookList.length}})</h2>
+        <div class="crt" *ngFor="let Book of BookList">
+            <div class="image">
+                <img src="../../../assets/image 36.png" alt="">
+            </div>
+            <div class="book-description">
+                <h2>{{Book}}</h2>
+                <p>by {{Book}}</p>
+                <div class="price-container" fxLayout="row">
+                    <div class="dicounted-price">
+                        <b>Rs. {{Book}} </b>
+                    </div>
+                    <div class="actual-price">
+                        Rs. {{Book}}
+                    </div>
+                </div>
+                <div class="quantity">
+                    <div class="decreaseQty" >
+                        <img src="../../../assets/negative.svg" alt=" ">
+                    </div>
+                    <div class="one">
+                        {{Book}}
+                    </div>
+                    <div class="IncreaseQty">
+                        <img src="../../../assets/positive.svg" alt=" ">
+                    </div>
+                    <div class="btn">
+                        <button mat-button >
+                            Remove
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="placeorder">
+            <a class="order" >PLACE ORDER</a>
+        </div>
+    </div>
+    <div class="address" *ngFor="let Book of BookList">
+        <div *ngIf="address">
+            <h2>Address Details</h2>
+        </div>
+        <!-- <form *ngIf="!address"> -->
+        <div *ngIf="!address">
+            <div>
+                <div>
+                    <h2>Customer Details</h2>
+                </div>
+                <div class="cust-container">
+                    <div class="fname">
+                        <div>
+                            <label for="fname" class="label">Full Name</label>
+                        </div>
+                        <div>
+                            <p>{{Book}}</p>
+                        </div>
+                    </div>
+                    <div class="fname">
+                        <div>
+                            <label for="MoNum" class="label">Mobile Number</label>
+                        </div>
+                        <p>{{Book}}</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>Address</h4>
+                <div class="fad">
+                    <p>{{Book}}</p>
+                  
+                </div>
+            </div>
+            <div class="cust-container">
+                <div class="fname">
+                    <div>
+                        <label for="MoNum" class="label">City/Town</label>
+                    </div>
+                    <div>
+                        <p>{{Book}}</p>
+                       
+                    </div>
+                </div>
+                <div class="fname">
+                    <div>
+                        <label for="MoNum" class="label">State</label>
+                    </div>
+                    <div>
+                        <p>{{Book}}</p>
+                       
+                    </div>
+                </div>
+            </div>
+            
+        <div *ngIf="cont">
+            <a class="order">Continue</a>
+        </div>
+    </div>
+    <!-- </form> -->
+
+</div>
+<div class="summary">
+    <div *ngIf="summary">
+        <h2>Order Summary</h2>
+    </div>
+    <div *ngIf="!summary">
+        <h2>Order Summary</h2>
+        <div class="crt" *ngFor="let Book of BookList">
+            <div class="image">
+                <img src="../../../assets/image 36.png" alt="">
+            </div>
+            <div class="book-description">
+                <h2>{{Book}}</h2>
+                <p>by {{Book}}</p>
+                <div class="price-container" fxLayout="row">
+                    <div class="dicounted-price">
+                        <b>Rs. {{Book}} </b>
+                    </div>
+                    <div class="actual-price">
+                        Rs. {{Book}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a class="order" routerLink="/home/orderplaced">Checkout</a>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

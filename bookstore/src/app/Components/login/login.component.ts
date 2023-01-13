@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
     if (this.loginForm.valid) {
       console.log("User login successfully");
+      
       let payload = {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password,
@@ -36,10 +36,8 @@ export class LoginComponent implements OnInit {
         console.log(response);
         localStorage.setItem('token',response.result.accessToken)
          this.route.navigateByUrl("/home/books")
-      }
-      )
+      })
     }
-
   }
 
   

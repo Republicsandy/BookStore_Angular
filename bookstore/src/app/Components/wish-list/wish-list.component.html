@@ -6,24 +6,24 @@
         </div>
     </div>
     <div class="cart_container">
-        <h3>My Wishlist({{20}})</h3>
-        <div class="crt" >
+        <h3>My Wishlist({{BookList.length}})</h3>
+        <div class="crt" *ngFor="let Book of BookList">
             <div class="image">
                 <img src="../../../assets/Image 11.png" alt="">
             </div>
             <div class="book-description">
-                <h2>{{'bookName'}}</h2>
-                <p>by {{'author'}}</p>
+                <h2>{{Book}}</h2>
+                <p>by {{Book}}</p>
                 <div class="price-container" fxLayout="row">
                     <div class="dicounted-price">
-                        <b>{{'discountPrice'}}</b>
+                        <b>{{Book}}</b>
                     </div>
                     <div class="actual-price">
-                        Rs. {{'price'}}
+                        Rs. {{Book}}
                     </div>
                 </div>
             </div>
-            <div class="delete" >
+            <div class="delete" (click)="deleteItem(Book)">
                 <img src="../../../assets/delete.svg" alt="">
             </div>
         </div>
