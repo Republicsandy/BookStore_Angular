@@ -9,9 +9,16 @@ import { DataService } from 'src/app/Services/DataService/data.service';
   styleUrls: ['./display-books.component.scss']
 })
 export class DisplayBooksComponent implements OnInit {
-  // @Input() recieveBookList: any;
   BookList:any=[]
-  bookName:any
+  description: any;
+  discountPrice: any;
+  bookName: any;
+  author: any;
+  quantity:any
+  price: any;
+  id: any;
+  Search='';
+  Feedback=[];
   
   constructor(private route:Router,private dataService:DataService,private book:BookService) { }
 
@@ -19,7 +26,9 @@ export class DisplayBooksComponent implements OnInit {
 
   onclick(book:any){ 
     this.dataService.SendBookDetails(book)
-    this.route.navigateByUrl('/home/details')   
+    console.log(book);
+    localStorage.setItem("BookId" ,book._id)
+    this.route.navigateByUrl('/home/quick')   
   }
 
 

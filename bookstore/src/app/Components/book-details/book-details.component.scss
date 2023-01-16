@@ -6,6 +6,7 @@
 .main {
     padding: 6% 200px;
     margin-bottom: -60px;
+    margin-top: -20px;
 }
 
 .header {
@@ -13,6 +14,7 @@
     flex-direction: row;
     padding: 0px 0px 20px 70px;
     cursor: pointer;
+    margin-top: -50px;
 }
 
 .main-container {
@@ -20,28 +22,54 @@
     flex-direction: row;
 }
 
-.img-field {
+.img-small-field{
+    width: 343px;
+    margin-left: 266px;
+    margin-top: -54px;
+}
 
-    width: 50%;
-    margin-left: 206px;
+            .image-small{
+                width: 88px;
+                height: 114px;
+                border: 1px solid rgba(144, 143, 143, 0.75);
+                img {
+                    width: 69px;
+                    height: 96px;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                }
+            }
+
+
+.img-field {
+    width: 343px;
+    margin-left: 42px;
+    margin-right: -56px;
+    margin-top: -54px;
 }
 
 .image {
     width: 350px;
     height: 350px;
     border: 1px solid rgba(144, 143, 143, 0.75);
-}
+    margin-left: -326px;
+
 
 img {
     width: 250px;
     height: 300px;
     margin-left: 41px;
     margin-top: 27px;
-}
+}}
 
 .buttons {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-top: -171px;
     width: 350px;
+    margin-left: -325px;
+    margin-bottom: 281px;
+
 }
 
 .btn {
@@ -72,8 +100,9 @@ p {
 
 .wishlst {
 
-    margin-left: 186px;
-    margin-top: -32px;
+    margin-left: -58px;
+    /* margin-top: 0px; */
+    margin-top: auto;
 }
 
 .wishlst .btn {
@@ -83,6 +112,8 @@ p {
 .book-description {
     cursor: pointer;
     padding-left: 20px;
+    margin-top: -58px;
+    margin-left: -249px;
 
     h2 {
         white-space: nowrap;
@@ -121,8 +152,8 @@ p {
     }
 
     .no-of-people-rated {
-        margin-top: 15px;
-        margin-left: 5px;
+        margin-top: 1px;
+        margin-left: -21px;
         color: gray;
     }
 
@@ -176,23 +207,6 @@ p {
     content: '★ ';
 }
 
-.rate>input:checked~label {
-    color: #ffc700;
-}
-
-.rate:not(:checked)>label:hover,
-.rate:not(:checked)>label:hover~label {
-    color: #deb217;
-}
-
-.rate>input:checked+label:hover,
-.rate>input:checked+label:hover~label,
-.rate>input:checked~label:hover,
-.rate>input:checked~label:hover~label,
-.rate>label:hover~input:checked~label {
-    color: #c59b08;
-}
-
 .searchInput {
     margin-top: 5px;
     margin-right: 30%;
@@ -220,3 +234,95 @@ p {
 .sub {
     padding-left: 412px;
 }
+
+// .quantity {
+//     width: 30%;
+//     display: flex;
+//     flex-direction: row;
+
+//     img {
+//         width: 20px;
+//     }
+
+//     .one {
+//         margin-top: 20px;
+//     }
+
+//     .decreaseQty {
+//         margin-right: 17px;
+//         // margin-top: -76px;
+//         margin-left: -14px;
+//     }
+
+//     .IncreaseQty {
+//         margin-left: 5px;
+//         // margin-top: -76px;
+//     }
+
+//     // .btn {
+//     //     margin-left: 9px;
+//     //         margin-top: 100px;
+
+       
+
+//     //     button {
+//     //         border: none;
+//     //         background: none;
+//     //     }
+//     // }
+// }
+
+.btn-crt{margin-left: 9px;
+    margin-top: 100px;
+    .btn {
+        margin-left: 9px;
+            margin-top: 100px;
+
+       
+
+        button {
+            border: none;
+            background: none;
+        }
+    }
+    .quantity {
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0px;
+        margin-top: 108px;
+    
+        img {
+            width: 20px;
+        }
+    
+        .one {
+            margin-top: 20px;
+        }
+    
+        .decreaseQty {
+            margin-right: 17px;
+            // margin-top: -76px;
+            margin-left: -14px;
+        }
+    
+        .IncreaseQty {
+            margin-left: 5px;
+            // margin-top: -76px;
+        }
+    
+        // .btn {
+        //     margin-left: 9px;
+        //         margin-top: 100px;
+    
+           
+    
+        //     button {
+        //         border: none;
+        //         background: none;
+        //     }
+        // }
+    }
+
+}
+

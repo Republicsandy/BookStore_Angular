@@ -7,6 +7,7 @@ import { BookDetailsComponent } from './Components/book-details/book-details.com
 import { WishListComponent } from './Components/wish-list/wish-list.component';
 import { DisplayBooksComponent } from './Components/display-books/display-books.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { PlaceOrderComponent } from './Components/place-order/place-order.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -17,9 +18,10 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: 'books', component: DisplayBooksComponent },
-      {path: 'details', component:BookDetailsComponent},
+      {path: 'quick', component:BookDetailsComponent},
       {path: 'wish', component:WishListComponent},
-      {path:'cart',component:CartComponent}
+      {path:'cart',component:CartComponent},
+      {path:'order', component:PlaceOrderComponent}
     ],
   },
 ];

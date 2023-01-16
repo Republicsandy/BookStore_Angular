@@ -1,0 +1,54 @@
+<div class="header">
+    <h2>All Orders</h2>
+</div>
+<div class="tbl">
+    <TABLE style="border: none; " BORDER="0 " WIDTH="70% " CELLPADDING="10 " CELLSPACING="0 ">
+        <TR style="border: 1px solid #DCDCDC;background-color: gainsboro ">
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">Book</H3>
+            </TH>
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">Book Name</H3>
+            </TH>
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">Book Price</H3>
+            </TH>
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">Quantity</H3>
+            </TH>
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">Full Name</H3>
+            </TH>
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">Mobile Number</H3>
+            </TH>
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">Address</H3>
+            </TH>
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">City</H3>
+            </TH>
+            <TH COLSPAN="1 ">
+                <H3 style="text-align: center; ">State</H3>
+            </TH>
+        </TR>
+        
+        <TR *ngFor="let Book of BookList">
+            <TH style="color: #333232;opacity: 0.71; "> 
+                <div class="image">
+                    <img src="../../../assets/image 36.png" alt="">
+                </div>
+            </TH>
+            <TH style="color: #333232;opacity: 0.71; ">{{Book.product_name}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.product_price}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.product_quantity}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.fullName}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.phone}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.address[0].fullAddress}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.address[0].city}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.address[0].state}}</TH>
+        </TR>
+    
+    </TABLE>
+    
+</div>

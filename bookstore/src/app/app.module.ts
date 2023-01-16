@@ -22,6 +22,8 @@ import { BookDetailsComponent } from './Components/book-details/book-details.com
 import { FooterComponent } from './Components/footer/footer.component';
 import { WishListComponent } from './Components/wish-list/wish-list.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { PlaceOrderComponent } from './Components/place-order/place-order.component';
+import { OrdersComponent } from './Components/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { CartComponent } from './Components/cart/cart.component';
     FooterComponent,
     WishListComponent,
     CartComponent,
+    PlaceOrderComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,

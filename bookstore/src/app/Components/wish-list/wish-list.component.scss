@@ -1,0 +1,78 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    padding: 6% 200px;
+    margin-bottom: -60px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 0px 20px 70px;
+}
+
+.cart_container {
+    border-color: black;
+    border: groove;
+    height: auto;
+    margin-left: 266px;
+    margin-right: 266px;
+}
+.image {
+    width: 191px;
+    height: 204px;
+    margin-top: -9px;
+    margin-right: -289px;
+}
+
+img {
+    width: 100px;
+    height: 125px;
+    margin-left: 14px;
+    margin-top: 46px;
+}
+
+.book-description {
+    cursor: pointer;
+    padding-left: 20px;
+    margin-top: 36px;
+
+    h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 2px;
+    }
+
+    p {
+        margin-bottom: 2px;
+    }
+
+    .price-container {
+        .dicounted-price {
+            margin-top: 10px;
+            font-size: large;
+        }
+
+        .actual-price {
+            margin-top: 10px;
+            margin-left: 5px;
+            text-decoration: line-through;
+            color: gray;
+        }
+    }
+}
+
+.crt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.delete img{
+    width: 29px;
+    height: 33px;
+    margin-right: 32px;
+}

@@ -2,7 +2,7 @@
     <mat-toolbar class="header">
         <div class="logo" routerLink="/home/books">
             <img src="../../../assets/education (1).svg" alt="">
-            <p>Bookstore</p>
+            <p routerLink="/home/books">Bookstore</p>
         </div>
         <div class="search-container" >
             <div class="s-btn" type="button">
@@ -13,7 +13,6 @@
                     role="combobox" aria-hidden="false">
             </div>
         </div>
-        <!-- <span class="example-spacer"></span> -->
         <button mat-icon-button class="profile">
             <mat-icon [matMenuTriggerFor]="menu">
                 <img src="../../../assets/person_white_24dp.svg" alt="">
@@ -40,9 +39,9 @@
 
         <button mat-icon-button class="cart" >
             <mat-icon>
-                <img src="../../../assets/shopping_cart_white_24dp.svg" alt="">
+                <img (click)="cart()" src="../../../assets/shopping_cart_white_24dp.svg" alt="">
             </mat-icon>
-            <label>Cart</label>
+            <label >Cart</label>
         </button>
     </mat-toolbar>
 </div>

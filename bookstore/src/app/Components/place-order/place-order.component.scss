@@ -1,0 +1,47 @@
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.src {
+    width: 200px;
+    height: 200px;
+}
+
+.continuebutton {
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-top: 40px;
+    margin-left: 600px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+}
+.place_img{
+    margin-left: 504px;
+    margin-top: 68px;
+}
+.place_img .img{
+    background: transparent;
+    margin-left: -39px;
+}
+.placedown{
+    margin: 1px;
+    margin-left: 544px;
+    margin-top: -44px;
+}
+.ord{
+    margin: 1px;
+    margin-left: 546px;
+}
+.msg{
+    margin-bottom: 60px;
+    margin-left: -106px;
+}
+.tbl{
+    margin-left: 250px;
+    margin-top: 68px;
+}

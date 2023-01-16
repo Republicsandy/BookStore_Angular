@@ -12,28 +12,28 @@
                 <img src="../../../assets/image 36.png" alt="">
             </div>
             <div class="book-description">
-                <h2>{{Book}}</h2>
-                <p>by {{Book}}</p>
+                <h2>{{Book.product_id.bookName}}</h2>
+                <p>by {{Book.product_id.author}}</p>
                 <div class="price-container" fxLayout="row">
                     <div class="dicounted-price">
-                        <b>Rs. {{Book}} </b>
+                        <b>Rs. {{Book.product_id.discountPrice}} </b>
                     </div>
                     <div class="actual-price">
-                        Rs. {{Book}}
+                        Rs. {{Book.product_id.price}}
                     </div>
                 </div>
                 <div class="quantity">
-                    <div class="decreaseQty" >
-                        <img src="../../../assets/negative.svg" alt=" ">
+                    <div class="decreaseQty" (click)="bookMinusCount(Book)">
+                        <img  src="../../../assets/negative.svg" alt=" ">
                     </div>
                     <div class="one">
-                        {{Book}}
+                        {{Book.quantityToBuy}}
                     </div>
-                    <div class="IncreaseQty">
-                        <img src="../../../assets/positive.svg" alt=" ">
+                    <div class="IncreaseQty" (click)="bookPlusCount(Book)">
+                        <img  src="../../../assets/positive.svg" alt=" ">
                     </div>
                     <div class="btn">
-                        <button mat-button >
+                        <button mat-button (click)="deleteItem(Book._id)"  >
                             Remove
                         </button>
                     </div>
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div *ngIf="placeorder">
-            <a class="order" >PLACE ORDER</a>
+            <a class="order" (click)="addressBar()">PLACE ORDER</a>
         </div>
     </div>
     <div class="address" *ngFor="let Book of BookList">
@@ -61,14 +61,14 @@
                             <label for="fname" class="label">Full Name</label>
                         </div>
                         <div>
-                            <p>{{Book}}</p>
+                            <p>{{Book.user_id.fullName}}</p>
                         </div>
                     </div>
                     <div class="fname">
                         <div>
                             <label for="MoNum" class="label">Mobile Number</label>
                         </div>
-                        <p>{{Book}}</p>
+                        <p>{{Book.user_id.phone}}</p>
                         
                     </div>
                 </div>
@@ -76,7 +76,7 @@
             <div>
                 <h4>Address</h4>
                 <div class="fad">
-                    <p>{{Book}}</p>
+                    <p>{{Book.user_id.address[0].fullAddress}}</p>
                   
                 </div>
             </div>
@@ -86,7 +86,7 @@
                         <label for="MoNum" class="label">City/Town</label>
                     </div>
                     <div>
-                        <p>{{Book}}</p>
+                        <p>{{Book.user_id.address[0].city}}</p>
                        
                     </div>
                 </div>
@@ -95,14 +95,14 @@
                         <label for="MoNum" class="label">State</label>
                     </div>
                     <div>
-                        <p>{{Book}}</p>
+                        <p>{{Book.user_id.address[0].state}}</p>
                        
                     </div>
                 </div>
             </div>
             
         <div *ngIf="cont">
-            <a class="order">Continue</a>
+            <a class="order" (click)="continueBar()">Continue</a>
         </div>
     </div>
     <!-- </form> -->
@@ -119,20 +119,20 @@
                 <img src="../../../assets/image 36.png" alt="">
             </div>
             <div class="book-description">
-                <h2>{{Book}}</h2>
-                <p>by {{Book}}</p>
+                <h2>{{Book.product_id.bookName}}</h2>
+                <p>by {{Book.product_id.author}}</p>
                 <div class="price-container" fxLayout="row">
                     <div class="dicounted-price">
-                        <b>Rs. {{Book}} </b>
+                        <b>Rs. {{Book.product_id.discountPrice}} </b>
                     </div>
                     <div class="actual-price">
-                        Rs. {{Book}}
+                        Rs. {{Book.product_id.price}}
                     </div>
                 </div>
             </div>
         </div>
         <div>
-            <a class="order" routerLink="/home/orderplaced">Checkout</a>
+            <a class="order" (click)="placeOrder()" >Checkout</a>
         </div>
     </div>
 </div>

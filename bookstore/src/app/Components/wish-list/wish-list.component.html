@@ -1,7 +1,7 @@
 <div class="Container">
     <div class="main">
         <div class="header">
-            <p routerLink="/home/books" type="button">Home /</p>
+            <p type="button">Home /</p>
             <p>My Wishlist</p>
         </div>
     </div>
@@ -12,18 +12,18 @@
                 <img src="../../../assets/Image 11.png" alt="">
             </div>
             <div class="book-description">
-                <h2>{{Book}}</h2>
-                <p>by {{Book}}</p>
+                  <h2>{{Book.product_id.bookName}}</h2>
+                <p>by {{Book.product_id.author}}</p>
                 <div class="price-container" fxLayout="row">
                     <div class="dicounted-price">
-                        <b>{{Book}}</b>
+                        <b>{{Book.product_id.discountPrice}}</b>
                     </div>
                     <div class="actual-price">
-                        Rs. {{Book}}
+                        Rs. {{Book.product_id.price}}
                     </div>
                 </div>
             </div>
-            <div class="delete" (click)="deleteItem(Book)">
+            <div class="delete" (click)="deleteItem(Book.product_id._id)">
                 <img src="../../../assets/delete.svg" alt="">
             </div>
         </div>
