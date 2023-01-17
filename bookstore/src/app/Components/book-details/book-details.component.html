@@ -17,16 +17,16 @@
             </div>
             <div class="buttons">
                 <div class="btn-crt">
-                    <button class="btn" *ngIf="cartValue" (click)="cartAdd()">add to
+                    <button class="btn" *ngIf="cartValue" (click)="cart();cartAdd()">add to
                         bag</button>
                     <div class="quantity" *ngIf="!cartValue">
-                        <div class="decreaseQty" (click)="bookMinusCount(Book)">
+                        <div class="decreaseQty" (click)="bookMinusCount(CartList._id)">
                             <img  src="../../../assets/negative.svg" alt=" ">
                         </div>
                         <div class="one">
-                            {{Book.quantityToBuy}}
+                            {{item_qty}}
                         </div>
-                        <div class="IncreaseQty" (click)="bookPlusCount(Book)">
+                        <div class="IncreaseQty" (click)="bookPlusCount(CartList._id)">
                             <img  src="../../../assets/positive.svg" alt=" ">
                         </div>
                     </div>

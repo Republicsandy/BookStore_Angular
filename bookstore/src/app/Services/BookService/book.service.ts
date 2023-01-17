@@ -137,7 +137,7 @@ export class BookService {
         'x-access-token': this.token
       })
     }
-    return this.httpService.putService("/bookstore_user/cart_item_quantity/"+bookId, req, true, header)
+    return this.httpService.putService(`/bookstore_user/cart_item_quantity/${bookId}`, req, true, header)
   }
 
 

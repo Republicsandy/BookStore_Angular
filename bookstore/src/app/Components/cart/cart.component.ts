@@ -84,7 +84,7 @@ this.route.navigateByUrl('home/order')
 
   }
   bookMinusCount(Book:any){
-    this.item_qty =Book.quantityToBuy;
+    this.item_qty = Book.quantityToBuy;
     if (this.item_qty > 0) {
       this.item_qty -= 1;
       console.log( "decrease", this.item_qty);
