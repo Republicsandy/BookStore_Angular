@@ -19,6 +19,9 @@ export class DisplayBooksComponent implements OnInit {
   id: any;
   Search='';
   Feedback=[];
+  bookDiscription:any;
+  bookTitle:any;
+  bookId:any
   
   constructor(private route:Router,private dataService:DataService,private book:BookService) { }
 
@@ -28,9 +31,13 @@ export class DisplayBooksComponent implements OnInit {
     this.dataService.SendBookDetails(book)
     console.log(book);
     localStorage.setItem("BookId" ,book._id)
-    this.route.navigateByUrl('/home/quick')   
+    this.route.navigateByUrl('/home/quick') 
+    localStorage.setItem("bookDiscription" ,book.description)
+    localStorage.setItem("bookName" ,book.bookName)
+    localStorage.setItem("bookdprice" ,book.discountPrice)
+    localStorage.setItem("bookprice" ,book.price)
+    localStorage.setItem("bookAuthor" ,book.author)
   }
-
 
   getAllBook(){
     this.book.getAllBook().subscribe((res:any)=>{

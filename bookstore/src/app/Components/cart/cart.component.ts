@@ -27,14 +27,18 @@ export class CartComponent implements OnInit{
   summary = true;
   Books: any
   item_qty = 1;
+  quentitySend:any
 
   constructor(private dataService: DataService, private book: BookService,private route:Router) { }
   ngOnInit(): void {
+    // this.quentitySend=this.BookList.quantityToBuy
+    // console.log(this.quentitySend);
     this.getCartBook()
   }
   deleteItem(Book: any) {
     console.log(Book)
     this.book.removeItem(Book).subscribe((res: any) => {
+      this.getCartBook()
     })
   }
 
@@ -67,16 +71,13 @@ export class CartComponent implements OnInit{
     })
 this.route.navigateByUrl('home/order')
   }
-
   getCartBook(){
     this.book.getCartBook().subscribe((res:any)=>{
       this.BookList=res.result;
       localStorage.setItem('badgeCount',res.result.length)
       })
   }
-
   bookPlusCount(Book:any){
-
     this.item_qty = Book.quantityToBuy;
     this.item_qty += 1;
     console.log("increased",this.item_qty);
@@ -96,10 +97,7 @@ this.route.navigateByUrl('home/order')
       quantityToBuy: this.item_qty
     }
     this.book.quantity(Book._id,payload).subscribe((res:any)=>{
+      this.getCartBook()
     })
   }
-
-
-
-
 }

@@ -26,10 +26,22 @@ export class BookDetailsComponent implements OnInit {
   Feedback = [];
   BookId: any;
   item_qty:number = 1;
+  bookDiscription:any;
+  bookTitle:any;
+  bookId:any;
+  bookPrice:any;
+  bookDiscountPrice:any
+  bookAuthor:any
+  product_id:any
+
   constructor(private dataService: DataService, private book: BookService,private route:Router) {localStorage.getItem('BookId') }
   ngOnInit(): void {
     this.BookId = localStorage.getItem("BookId");
-    console.log(this.BookId);
+    this.bookDiscription = localStorage.getItem(("bookDiscription"));
+    this.bookName = localStorage.getItem(("bookName"));
+    this.bookPrice = localStorage.getItem(("bookprice"));
+    this.bookDiscountPrice = localStorage.getItem(("bookdprice"));
+    this.bookAuthor = localStorage.getItem(("bookAuthor"));
     this.dataService.getBookDetails.subscribe((res: any) => {
       this.Book = res;
     });
@@ -46,9 +58,10 @@ export class BookDetailsComponent implements OnInit {
   }
   wish() {
     let Book = {
-      product_id: this.Book._id,
+      product_id: localStorage.getItem("BookId")
     };
-    this.book.addWish(Book).subscribe((res: any) => {
+    console.log(this.product_id);
+    this.book.addWish(this.BookId).subscribe((res: any) => {
       this.RefreshEvent.emit(res);
     });
     this.route.navigateByUrl('/home/wish');
@@ -56,29 +69,25 @@ export class BookDetailsComponent implements OnInit {
   cartAdd() {
     this.cartValue = false;
   }
-
   cart() {
-    let Book = {
+    let book = {
       product_id: this.Book._id,
     }
-    console.log(Book)
-    this.book.addCart(Book).subscribe((res: any) => {
+    console.log(this.book)
+    this.book.addCart(book).subscribe((res: any) => {
       console.log(res)
       this.RefreshEvent.emit(res)
     })
   }
   bookPlusCount(Book:any){
-
-    this.item_qty = Book;
-    console.log(this.item_qty);
+    this.item_qty = Book.quantityToBuy;
     this.item_qty += 1;
     console.log("increased",this.item_qty);
     this.updateCount(Book);
 
   }
   bookMinusCount(Book:any){
-    this.item_qty = Book.CartList.quantityToBuy;
-    console.log(this.item_qty);
+    this.item_qty = Book.quantityToBuy;
     if (this.item_qty > 0) {
       this.item_qty -= 1;
       console.log( "decrease", this.item_qty);
@@ -86,10 +95,11 @@ export class BookDetailsComponent implements OnInit {
     }
   }
    updateCount(Book:any){
+    this.BookId = localStorage.getItem("BookId");
     let payload={
       quantityToBuy: this.item_qty
     }
-    this.book.quantity(Book._id,payload).subscribe((res:any)=>{
+    this.book.quantity(this.BookId,payload).subscribe((res:any)=>{
       console.log();
       
     })

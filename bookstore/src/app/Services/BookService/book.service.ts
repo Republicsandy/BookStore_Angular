@@ -29,19 +29,21 @@ export class BookService {
     );
   }
 
-  addCart(Book: any) {
+  addCart(book:any) {
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'x-access-token': this.token,
       }),
     };
-    return this.httpService.postService(
-      '/bookstore_user/add_cart_item/' + Book.product_id,
-      Book,
-      true,
-      header
-    );
+    //return this.httpService.putService(`/bookstore_user/cart_item_quantity/${bookId}`, req, true, header)
+    // return this.httpService.postService(
+    //   `/bookstore_user/add_cart_item/${id}`,
+    //   id,
+    //   true,
+    //   header
+    // );
+return this.httpService.postService("/bookstore_user/add_cart_item/"+book.product_id,book, true, header)
   }
   addWish(Book: any) {
     let header = {

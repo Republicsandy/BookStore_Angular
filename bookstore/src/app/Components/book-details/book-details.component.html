@@ -20,13 +20,13 @@
                     <button class="btn" *ngIf="cartValue" (click)="cart();cartAdd()">add to
                         bag</button>
                     <div class="quantity" *ngIf="!cartValue">
-                        <div class="decreaseQty" (click)="bookMinusCount(CartList._id)">
+                        <div class="decreaseQty" (click)="bookMinusCount(Book)">
                             <img  src="../../../assets/negative.svg" alt=" ">
                         </div>
                         <div class="one">
-                            {{item_qty}}
+                            {{Book.quantityToBuy}}
                         </div>
-                        <div class="IncreaseQty" (click)="bookPlusCount(CartList._id)">
+                        <div class="IncreaseQty" (click)="bookPlusCount(Book)">
                             <img  src="../../../assets/positive.svg" alt=" ">
                         </div>
                     </div>
@@ -38,8 +38,8 @@
         </div>
         <div class="book-description">
             <div class="bookname">
-                <h2>{{Book.bookName}}</h2>
-                <p>by {{Book.author}}</p>
+                <h2>{{bookName}}</h2>
+                <p>by {{bookAuthor}}</p>
             </div>
             <div class="rating-container">
                 <div class="rating">
@@ -51,10 +51,10 @@
             </div>
             <div class="price-container">
                 <div class="dicounted-price">
-                    Rs. {{Book.discountPrice}}
+                    Rs. {{bookDiscountPrice}}
                 </div>
                 <div class="actual-price">
-                    Rs. {{Book.price}}
+                    Rs. {{bookPrice}}
                 </div>
             </div>
             <hr>
@@ -64,7 +64,7 @@
                         Book Details
                     </li>
                 </ul>
-                {{Book.description}}
+                {{bookDiscription}}
             </div>
             <hr>
             <div class="feedback">
