@@ -6,44 +6,30 @@ import { HttpService } from '../HttpService/http.service';
   providedIn: 'root',
 })
 export class BookService {
-  private _id(arg0: string, _id: any) {
-    throw new Error('Method not implemented.');
-  }
   token: any;
   accessToken: any;
 
   constructor(private httpService: HttpService) {
     this.token = localStorage.getItem('token');
   }
-  getAllBook() {
+  getAllBook(){
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'x-access-token': this.token,
-      }),
-    };
-    return this.httpService.getService(
-      '/bookstore_user/get/book',
-      true,
-      header
-    );
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.getService("/bookstore_user/get/book",true, header)
   }
-
-  addCart(book:any) {
+  addCart(Book:any)
+  {
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'x-access-token': this.token,
-      }),
-    };
-    //return this.httpService.putService(`/bookstore_user/cart_item_quantity/${bookId}`, req, true, header)
-    // return this.httpService.postService(
-    //   `/bookstore_user/add_cart_item/${id}`,
-    //   id,
-    //   true,
-    //   header
-    // );
-return this.httpService.postService("/bookstore_user/add_cart_item/"+book.product_id,book, true, header)
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService("/bookstore_user/add_cart_item/"+Book.product_id, Book, true, header)
   }
   addWish(Book: any) {
     let header = {
@@ -59,45 +45,35 @@ return this.httpService.postService("/bookstore_user/add_cart_item/"+book.produc
       header
     );
   }
-  getWishBook() {
+  getWishBook(){
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'x-access-token': this.token,
-      }),
-    };
-    return this.httpService.getService(
-      '/bookstore_user/get_wishlist_items',
-      true,
-      header
-    );
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.getService("/bookstore_user/get_wishlist_items",true, header)
   }
-  removeItem(Book: any) {
+  removeItem(Book:any)
+  {
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'x-access-token': this.token,
-      }),
-    };
-    return this.httpService.deleteService(
-      '/bookstore_user/remove_cart_item/' + Book,
-      true,
-      header
-    );
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.deleteService("/bookstore_user/remove_cart_item/"+Book, true, header)
   }
 
-  removeWish(Book: any) {
+  removeWish(Book:any)
+  {
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'x-access-token': this.token,
-      }),
-    };
-    return this.httpService.deleteService(
-      '/bookstore_user/remove_wishlist_item/' + Book,
-      true,
-      header
-    );
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.deleteService("/bookstore_user/remove_wishlist_item/"+Book, true, header)
   }
 
   getCartBook() {
@@ -116,19 +92,15 @@ return this.httpService.postService("/bookstore_user/add_cart_item/"+book.produc
     //https://bookstore.incubation.bridgelabz.com/bookstore_user/get_cart_items
   }
 
-  order(Book: any) {
+  order(Book:any)
+  {
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'x-access-token': this.token,
-      }),
-    };
-    return this.httpService.postService(
-      '/bookstore_user/add/order',
-      Book,
-      true,
-      header
-    );
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService("/bookstore_user/add/order", Book, true, header)
   }
 
   quantity(bookId:any,req:any)
@@ -139,7 +111,7 @@ return this.httpService.postService("/bookstore_user/add_cart_item/"+book.produc
         'x-access-token': this.token
       })
     }
-    return this.httpService.putService(`/bookstore_user/cart_item_quantity/${bookId}`, req, true, header)
+    return this.httpService.putService("/bookstore_user/cart_item_quantity/"+bookId, req, true, header)
   }
 
 

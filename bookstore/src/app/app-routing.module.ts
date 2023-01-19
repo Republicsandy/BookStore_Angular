@@ -8,14 +8,15 @@ import { WishListComponent } from './Components/wish-list/wish-list.component';
 import { DisplayBooksComponent } from './Components/display-books/display-books.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { PlaceOrderComponent } from './Components/place-order/place-order.component';
+import { AuthanticationGuard } from './Guard/authantication.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegistrationComponent },
+  {path:'',redirectTo:"/login",pathMatch:'full'},
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'home',component:HomeComponent,canActivate:[AuthanticationGuard],
     children: [
       { path: 'books', component: DisplayBooksComponent },
       {path: 'quick', component:BookDetailsComponent},

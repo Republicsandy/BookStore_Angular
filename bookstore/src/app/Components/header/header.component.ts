@@ -30,11 +30,23 @@ cartValue=true;
   
   ngOnInit(): void {
   }
+  Logout()
+  {
+    localStorage.removeItem('token');
+    this.route.navigateByUrl("/login")
+    console.log("Logout Successfully..!!!");
+  }
 
   cart() {
-   
-  
      this.route.navigateByUrl('/home/cart')
   }
+  wish()
+  {
+    this.route.navigateByUrl("/home/wish")
+  }
+  searchBook(event:any){
+    this.dataService.SendBookDetails(event.target.value)
+  }
+
 
 }

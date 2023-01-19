@@ -24,13 +24,13 @@
             <div class="bg">
                 <h4>Welcome</h4>
                 <p>To acsess account and manage orders</p>
-                <button class="login-btn" >Logout</button>
+                <button class="login-btn" (click)="Logout()">Logout</button>
                 <hr>
-                <div class="order">
+                <div class="order"(click)="cart()">
                     <img src="../../../assets/markunread-mailbox.svg" alt="">
                     <p>My Order</p>
                 </div>
-                <div class="order">
+                <div class="order" (click)="wish()">
                     <img src="../../../assets/like.svg" alt="">
                     <p>Wishlist</p>
                 </div>

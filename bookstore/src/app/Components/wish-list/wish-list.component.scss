@@ -1,6 +1,7 @@
 .Container {
     display: flex;
     flex-direction: column;
+   
 }
 
 .main {
@@ -18,8 +19,10 @@
     border-color: black;
     border: groove;
     height: auto;
+    width: 163%;
     margin-left: 266px;
     margin-right: 266px;
+    position: relative;
 }
 .image {
     width: 191px;
