@@ -24,8 +24,9 @@ cartValue=true;
   array: any;
   Feedback = [];
   BookId: any;
+  content:any;
   constructor(private book: BookService, private dataService: DataService ,private route: Router,) { 
-    
+    this.content=localStorage.getItem('badgeCount')
   }
   
   ngOnInit(): void {

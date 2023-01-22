@@ -22,16 +22,21 @@ export class DisplayBooksComponent implements OnInit {
   bookDiscription:any;
   bookTitle:any;
   bookId:any
+  recieveBookList:any
   
   constructor(private route:Router,private dataService:DataService,private book:BookService) { }
 
-  ngOnInit(): void { this.getAllBook(); }
+  ngOnInit(): void { this.getAllBook(); 
+
+    this.dataService.getBookDetails.subscribe((res:any)=>{
+      this.Search=res;
+    })
+  }
 
   onclick(book:any){ 
     this.dataService.SendBookDetails(book)
-    console.log(book);
-    localStorage.setItem("BookId" ,book._id)
     this.route.navigateByUrl('/home/quick') 
+    localStorage.setItem("BookId" ,book._id)
     localStorage.setItem("bookDiscription" ,book.description)
     localStorage.setItem("bookName" ,book.bookName)
     localStorage.setItem("bookdprice" ,book.discountPrice)
@@ -41,9 +46,18 @@ export class DisplayBooksComponent implements OnInit {
 
   getAllBook(){
     this.book.getAllBook().subscribe((res:any)=>{
-      console.log(res);
       this.BookList=res.result;
-      console.log(this.BookList);
+      localStorage.setItem('setlocalStorage',res.result)
       })
+  }
+
+  lowtohigh(){
+    this.BookList= this.BookList.sort((low:any,high:any)=> low.discountPrice-high.discountPrice); 
+    }
+  hightolow(){
+    this.BookList= this.BookList.sort((low:any,high:any)=> high.discountPrice-low.discountPrice);
+  }
+  newestarrivals(){
+    this.BookList.reverse();
   }
 }

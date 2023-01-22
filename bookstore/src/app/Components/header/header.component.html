@@ -4,7 +4,7 @@
             <img src="../../../assets/education (1).svg" alt="">
             <p routerLink="/home/books">Bookstore</p>
         </div>
-        <div class="search-container" >
+        <div class="search-container"(keyup)="searchBook($event)" >
             <div class="s-btn" type="button">
                 <img src="../../../assets/search.svg">
             </div>

@@ -8,9 +8,9 @@
         <mat-form-field appearance="outline">
           <mat-label>Sort by relevance</mat-label>
           <mat-select class="matselect">
-            <mat-option >Price:Low to High</mat-option>
-            <mat-option >Price:High to Low</mat-option>
-            <mat-option >Newest Arrivals</mat-option>
+            <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
+            <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
+            <mat-option (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -18,7 +18,7 @@
   </div>
   <div class="all-books-container">
     <div class="all-books"
-      *ngFor="let Book of BookList ">
+      *ngFor="let Book of BookList | filter : Search">
       <div class="book" (click)="onclick(Book)">
         <div class="book-image">
           <img src="../../../assets/image 36.png" alt="">
