@@ -29,6 +29,8 @@ export class DisplayBooksComponent implements OnInit {
   ngOnInit(): void { this.getAllBook(); 
 
     this.dataService.getBookDetails.subscribe((res:any)=>{
+      console.log(res);
+      
       this.Search=res;
     })
   }
@@ -47,6 +49,7 @@ export class DisplayBooksComponent implements OnInit {
   getAllBook(){
     this.book.getAllBook().subscribe((res:any)=>{
       this.BookList=res.result;
+      console.log(res);
       localStorage.setItem('setlocalStorage',res.result)
       })
   }

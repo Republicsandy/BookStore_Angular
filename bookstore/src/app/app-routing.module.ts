@@ -14,7 +14,6 @@ const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegistrationComponent },
-  {path:'',redirectTo:"/login",pathMatch:'full'},
   {
     path: 'home',component:HomeComponent,canActivate:[AuthanticationGuard],
     children: [

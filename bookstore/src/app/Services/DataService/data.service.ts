@@ -7,13 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 export class DataService {
   private BookDetails = new BehaviorSubject('All Book');
   getBookDetails = this.BookDetails.asObservable();
-  
   constructor() { }
-
   SendBookDetails(book:any){
     this.BookDetails.next(book)
   }
-  
-
- 
 }
