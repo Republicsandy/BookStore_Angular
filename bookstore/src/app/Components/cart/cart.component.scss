@@ -1,11 +1,14 @@
 .Container {
     display: flex;
     flex-direction: column;
+    z-index: 0;
+    margin-bottom: 60px;
 }
 
 .main {
-    padding: 6% 200px;
-    margin-bottom: -60px;
+    padding: 3% 200px;
+    margin-bottom: -54px;
+    margin-top: 11px;
 }
 
 .header {

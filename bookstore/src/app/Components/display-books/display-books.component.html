@@ -18,7 +18,7 @@
   </div>
   <div class="all-books-container">
     <div class="all-books"
-      *ngFor="let Book of BookList | filter : Search">
+      *ngFor="let Book of BookList | filter: Search | paginate: {itemsPerPage:8, currentPage:page,totalItems:totalLength} ">
       <div class="book" (click)="onclick(Book)">
         <div class="book-image">
           <img src="../../../assets/image 36.png" alt="">
@@ -45,7 +45,9 @@
         </div>
       </div>
     </div>
-   
+    <div class="page">
+      <pagination-controls (pageChange)="page=$event" class="page"></pagination-controls>
+    </div>
   </div>
-  
+ 
 </div>

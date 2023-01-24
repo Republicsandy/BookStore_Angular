@@ -23,6 +23,8 @@ export class DisplayBooksComponent implements OnInit {
   bookTitle:any;
   bookId:any
   recieveBookList:any
+  totalLength:any;
+  page:number = 1;
   
   constructor(private route:Router,private dataService:DataService,private book:BookService) { }
 
@@ -32,7 +34,9 @@ export class DisplayBooksComponent implements OnInit {
       console.log(res);
       
       this.Search=res;
+      // this.totalLength = res.length;
     })
+    console.log(this.BookList);
   }
 
   onclick(book:any){ 

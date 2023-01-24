@@ -25,6 +25,7 @@ import { CartComponent } from './Components/cart/cart.component';
 import { PlaceOrderComponent } from './Components/place-order/place-order.component';
 import { OrdersComponent } from './Components/orders/orders.component';
 import { FilterPipe } from './Pipe/filter.pipe';
+import { NgxPaginationModule } from 'ngx-pagination'
 
 @NgModule({
   declarations: [
@@ -53,7 +54,9 @@ import { FilterPipe } from './Pipe/filter.pipe';
     FormsModule,ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    NgxPaginationModule
+
    
   ],
   providers: [],

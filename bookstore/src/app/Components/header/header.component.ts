@@ -10,20 +10,6 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 })
 export class HeaderComponent {
   @Output() RefreshEvent = new EventEmitter<string>();
-  BookList = []
-  Book: any
-  
-cartValue=true;
-  description: any;
-  discountPrice: any;
-  bookName: any;
-  author: any;
-  quantity: any
-  price: any;
-  _id: any;
-  array: any;
-  Feedback = [];
-  BookId: any;
   content:any;
   constructor(private book: BookService, private dataService: DataService ,private route: Router,) { 
     this.content=localStorage.getItem('badgeCount')
@@ -48,6 +34,4 @@ cartValue=true;
   searchBook(event:any){
     this.dataService.SendBookDetails(event.target.value)
   }
-
-
 }
